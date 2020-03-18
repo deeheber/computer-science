@@ -13,8 +13,7 @@
   delete - function - accepts an index, removes value from list, collapses,
                       and returns removed value
 
-  As always, you can change describe to xdescribe to prevent the unit tests from running while
-  you work
+  Deletes are expensive
 */
 
 class ArrayList {
