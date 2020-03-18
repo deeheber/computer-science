@@ -50,7 +50,7 @@ class LinkedList {
       this.tail = null;
       return node.value;
     }
-    const penultimate = this._find(null, (value, nodeValue, i, current) => current.next === this.tail );
+    const penultimate = this._find(null, (value, nodeValue, i, current) => current.next === this.tail);
     const ans = penultimate.next.value;
     penultimate.next = null;
     this.tail = penultimate;
@@ -81,7 +81,6 @@ class LinkedList {
 
   get (index) {
     const node = this._find(index, this._testIndex);
-    console.log(node)
     return node.value;
   }
 

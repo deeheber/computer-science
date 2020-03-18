@@ -11,7 +11,6 @@ function bubbleSort (nums) {
   let wasSwapped = false;
   do {
     wasSwapped = false;
-    console.log('Debug: ', nums);
     for (let i = 0; i <= nums.length; i++) {
       const firstNum = nums[i];
       const secondNum = nums[i + 1];

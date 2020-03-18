@@ -20,7 +20,6 @@ function merge (left, right) {
 
 function mergeSort (nums) {
   if (nums.length < 2) {
-    console.log('finishing ', nums);
     return nums;
   } else {
     const length = nums.length;
