@@ -36,22 +36,22 @@ class Tree {
 
     if (this.root === null) {
       this.root = node;
-      // return this.toObject();
+      return;
     }
 
     let current = this.root;
-    while (current) {
+    while (true) {
       if (value >= current.value) {
         if (current.right === null) {
           current.right = node;
-          current = false;
+          break;
         } else {
           current = current.right;
         }
       } else {
         if (current.left === null) {
           current.left = node;
-          current = false;
+          break;
         } else {
           current = current.left;
         }
