@@ -11,11 +11,11 @@ function bubbleSort (nums) {
   let wasSwapped = false;
   do {
     wasSwapped = false;
-    for (let i = 0; i <= nums.length; i++) {
+    for (let i = 0; i <= nums.length - 1; i++) {
       const firstNum = nums[i];
       const secondNum = nums[i + 1];
 
-      if (secondNum && secondNum < firstNum) {
+      if (secondNum < firstNum) {
         nums[i] = secondNum;
         nums[i + 1] = firstNum;
         wasSwapped = true;
@@ -26,4 +26,4 @@ function bubbleSort (nums) {
 }
 
 // Test case
-console.log(bubbleSort([10, 5, 3, 8, 2, 6, 4, 7, 9, 1]));
+console.log(bubbleSort([8, 6, 7, 5, 3, 0, 9]));
