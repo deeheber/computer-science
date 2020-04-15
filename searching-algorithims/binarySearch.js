@@ -13,14 +13,14 @@ function binarySearch (target, nums) {
     }
 
     if (guessValue > target) {
-      ceilingIndex = guessValue;
+      ceilingIndex = guessIndex;
     } else {
-      floorIndex = guessValue;
+      floorIndex = guessIndex;
     }
   }
   return false;
 }
 
 // The nums array must be sorted already
-console.log(binarySearch(1, [1, 2, 3, 4, 5])); // true
-console.log(binarySearch(10, [3, 4, 5, 7, 8, 10, 12, 13, 55])); // false
+console.log(binarySearch(55, [8, 9, 10, 11, 12, 13])); // false
+console.log(binarySearch(5, [5, 6, 7, 8, 9])); // true
