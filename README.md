@@ -1,3 +1,5 @@
 # computer-science
 
-Following along with http://btholt.github.io/four-semesters-of-cs/
+A place where I put random computer science things I study in case I need to reference them later.
+
+Mostly a playground and pretty messy.
