@@ -1,29 +1,33 @@
-function binarySearch (target, nums) {
-  let floorIndex = -1;
-  let ceilingIndex = nums.length;
+function binarySearch (list, item) {
+  // Sort in asc order
+  list.sort((a, b) => a - b);
 
-  while (floorIndex + 1 < ceilingIndex) {
-    const distance = ceilingIndex - floorIndex;
-    const halfDistance = Math.floor(distance / 2);
-    const guessIndex = floorIndex + halfDistance;
-    const guessValue = nums[guessIndex];
+  let low = 0;
+  let high = list.length;
 
-    if (target === guessValue) {
+  while (low <= high) {
+    const mid = Math.floor((low + high) / 2);
+    const guess = list[mid];
+
+    if (guess === item) {
       return true;
     }
 
-    if (guessValue > target) {
-      ceilingIndex = guessIndex;
+    if (guess < item) {
+      // item to the right of guess
+      low = mid + 1;
     } else {
-      floorIndex = guessIndex;
+      // item to the left of guess
+      high = mid - 1;
     }
+    console.log(low, high);
   }
   return false;
 }
 
 // The nums array must be sorted already
-console.log(binarySearch(55, [8, 9, 10, 11, 12, 13])); // false
-console.log(binarySearch(5, [5, 6, 7, 8, 9])); // true
+console.log(binarySearch([8, 9, 10, 11, 12, 13], 55)); // false
+console.log(binarySearch([5, 6, 7, 8, 9], 5)); // true
 
 // Alternate version
 // function binarySearch (target, nums) {
