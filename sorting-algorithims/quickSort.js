@@ -8,7 +8,7 @@
  */
 
 function quickSort (nums) {
-  if (nums.length <= 1) {
+  if (nums.length < 2) {
     return nums;
   }
   const pivot = nums.pop();
@@ -16,17 +16,15 @@ function quickSort (nums) {
   const greater = [];
 
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] <= pivot) {
-      less.push(nums[i]);
+    const current = nums[i];
+    if (current <= pivot) {
+      less.push(current);
     } else {
-      greater.push(nums[i]);
+      greater.push(current);
     }
   }
 
-  const sortedLess = quickSort(less);
-  const sortedGreater = quickSort(greater);
-
-  return sortedLess.concat(pivot, sortedGreater);
+  return quickSort(less).concat(pivot, quickSort(greater));
 }
 
 // Test case

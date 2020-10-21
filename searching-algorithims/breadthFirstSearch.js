@@ -13,7 +13,7 @@ function breadthFirstSearch(rootNode) {
   queue.push(rootNode);
 
   while (queue.length > 0) {
-    const currentNode = queue[0];
+    const currentNode = queue.shift();
     console.log(`Visiting: ${currentNode}`);
 
     if (currentNode.left) {
@@ -23,7 +23,5 @@ function breadthFirstSearch(rootNode) {
     if (currentNode.right) {
       queue.push(currentNode.right);
     }
-
-    queue.shift();
   }
 }
