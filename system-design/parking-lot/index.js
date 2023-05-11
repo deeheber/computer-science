@@ -23,7 +23,7 @@ class ParkingLot {
       return
     }
 
-    console.error(
+    throw new Error(
       `Not enough space in lot for ${JSON.stringify(vehicle, null, 2)}`
     )
   }
@@ -96,15 +96,4 @@ class Vehicle {
   }
 }
 
-// Playground to test
-const myLot = new ParkingLot(6)
-const motorcycle = new Vehicle(1)
-const car = new Vehicle(2)
-const van = new Vehicle(3)
-myLot.park(car)
-myLot.park(motorcycle)
-// myLot.leave(motorcycle)
-myLot.leave(car)
-myLot.park(van)
-console.log(myLot.spots)
-console.log(myLot.isLotEmpty())
+module.exports = { ParkingLot, Vehicle }
