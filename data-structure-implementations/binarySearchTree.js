@@ -5,7 +5,7 @@ Binary Search Tree!
 Name your class Tree.
 
 I'd suggest making another class called Node. You don't have to; you can make them all plain JS objects
-
+ 
 Here you'll make a BST. Your Tree class will have keep track of a root which will be the first item added
 to your tree. From there, if the item is less than the value of that node, it will go into its left subtree
 and if greater it will go to the right subtree.
@@ -23,49 +23,49 @@ As always, you can change describe to xdescribe to prevent the unit tests from r
 */
 
 class Tree {
-  constructor () {
-    this.root = null;
+  constructor() {
+    this.root = null
   }
 
-  toObject () {
-    return this.root;
+  toObject() {
+    return this.root
   }
 
-  add (value) {
-    const node = new Node(value);
+  add(value) {
+    const node = new Node(value)
 
     if (this.root === null) {
-      this.root = node;
-      return;
+      this.root = node
+      return
     }
 
-    let current = this.root;
+    let current = this.root
     while (true) {
       if (value >= current.value) {
         if (current.right === null) {
-          current.right = node;
-          break;
+          current.right = node
+          break
         } else {
-          current = current.right;
+          current = current.right
         }
       } else {
         if (current.left === null) {
-          current.left = node;
-          break;
+          current.left = node
+          break
         } else {
-          current = current.left;
+          current = current.left
         }
       }
     }
-    return this.toObject();
+    return this.toObject()
   }
 }
 
 class Node {
-  constructor (value, left = null, right = null) {
-    this.value = value;
-    this.left = left;
-    this.right = right;
+  constructor(value, left = null, right = null) {
+    this.value = value
+    this.left = left
+    this.right = right
   }
 }
 

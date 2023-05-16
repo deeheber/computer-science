@@ -15,19 +15,19 @@
  * 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
  */
 
-const insertionSort = nums => {
+const insertionSort = (nums) => {
   for (let i = 1; i < nums.length; i++) {
     for (let j = 0; j < i; j++) {
       if (nums[i] < nums[j]) {
         // Remove item
-        const spliced = nums.splice(i, 1);
+        const spliced = nums.splice(i, 1)
         // Insert it in at the correct spot
-        nums.splice(j, 0, spliced[0]);
+        nums.splice(j, 0, spliced[0])
       }
     }
   }
-  return nums;
-};
+  return nums
+}
 
 // Test cases
-console.log(insertionSort([10, 5, 3, 8, 2, 6, 4, 7, 9, 1]));
+console.log(insertionSort([10, 5, 3, 8, 2, 6, 4, 7, 9, 1]))

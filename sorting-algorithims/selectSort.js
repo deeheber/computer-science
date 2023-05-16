@@ -6,21 +6,21 @@
  * Swap the smallest number from the list on the right with the
  * current element on tn left list
  */
-function selectSort (nums) {
+function selectSort(nums) {
   for (let i = 0; i < nums.length; i++) {
-    let min = i;
+    let min = i
     for (let j = i + 1; j < nums.length; j++) {
       if (nums[j] < nums[min]) {
-        min = j;
+        min = j
       }
     }
     if (min !== i) {
-      const temp = nums[min];
-      nums[min] = nums[i];
-      nums[i] = temp;
+      const temp = nums[min]
+      nums[min] = nums[i]
+      nums[i] = temp
     }
   }
-  return nums;
+  return nums
 }
 
-console.log(selectSort([10, 5, 3, 8, 2, 6, 4, 7, 9, 1]));
+console.log(selectSort([10, 5, 3, 8, 2, 6, 4, 7, 9, 1]))

@@ -3,7 +3,7 @@
   A HashTableSet!
 
   Name your class/newable-function HashTableSet.
-
+ 
   With a set, you want to put in a value to check later if it's in the collection.
   You are going to watch a sufficiently large array to assure you don't have collisions. I did 255
   to start with. When added, use a hashing function to hash the string and put in your table.
@@ -17,24 +17,24 @@
 */
 
 class HashTableSet {
-  constructor () {
-    this.table = new Array(255);
+  constructor() {
+    this.table = new Array(255)
   }
 
-  add (input) {
-    this.table[this.hash(input, 255)] = input;
+  add(input) {
+    this.table[this.hash(input, 255)] = input
   }
 
-  check (input) {
-    return !!this.table[this.hash(input, 255)];
+  check(input) {
+    return !!this.table[this.hash(input, 255)]
   }
 
-  hash (input, max) {
-    let num = 0;
+  hash(input, max) {
+    let num = 0
     for (let i = 0; i < input.length; i++) {
-      num += input.charCodeAt(i) * i;
+      num += input.charCodeAt(i) * i
     }
-    return num % max;
+    return num % max
   }
 }
 

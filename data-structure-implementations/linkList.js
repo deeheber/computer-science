@@ -2,7 +2,7 @@
   LinkedList https://codepen.io/btholt/pen/eJBBEY?editors=001
 
   Name your class / constructor (something you can call new on) LinkedList
-
+ 
   LinkedList is made by making nodes that have two properties, the value that's being stored and a pointer to
   the next node in the list. The LinkedList then keep track of the head and usually the tail (I would suggest
   keeping track of the tail because it makes pop really easy.) As you may have notice, the unit tests are the
@@ -23,85 +23,88 @@
   you work
 */
 class LinkedList {
-  constructor () {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
+  constructor() {
+    this.head = null
+    this.tail = null
+    this.length = 0
   }
 
-  push (value) {
-    const node = new Node(value);
-    this.length++;
+  push(value) {
+    const node = new Node(value)
+    this.length++
     if (this.head === null) {
-      this.head = node;
+      this.head = node
     } else {
-      this.tail.next = node;
+      this.tail.next = node
     }
-    this.tail = node;
+    this.tail = node
   }
 
-  pop () {
+  pop() {
     if (!this.head) {
-      return null;
+      return null
     }
     if (this.head === this.tail) {
-      const node = this.head;
-      this.head = null;
-      this.tail = null;
-      return node.value;
+      const node = this.head
+      this.head = null
+      this.tail = null
+      return node.value
     }
-    const penultimate = this._find(null, (value, nodeValue, i, current) => current.next === this.tail);
-    const ans = penultimate.next.value;
-    penultimate.next = null;
-    this.tail = penultimate;
-    this.length--;
-    return ans;
+    const penultimate = this._find(
+      null,
+      (value, nodeValue, i, current) => current.next === this.tail
+    )
+    const ans = penultimate.next.value
+    penultimate.next = null
+    this.tail = penultimate
+    this.length--
+    return ans
   }
 
-  _find (value, test = this._test) {
-    let current = this.head;
-    let i = 0;
+  _find(value, test = this._test) {
+    let current = this.head
+    let i = 0
     while (current) {
       if (test(value, current.value, i, current)) {
-        return current;
+        return current
       }
-      current = current.next;
-      i++;
+      current = current.next
+      i++
     }
-    return null;
+    return null
   }
 
-  _test (a, b) {
-    return a === b;
+  _test(a, b) {
+    return a === b
   }
 
-  _testIndex (search, __, i) {
-    return search === i;
+  _testIndex(search, __, i) {
+    return search === i
   }
 
-  get (index) {
-    const node = this._find(index, this._testIndex);
-    return node.value;
+  get(index) {
+    const node = this._find(index, this._testIndex)
+    return node.value
   }
 
-  delete (index) {
-    const itemToDelete = this._find(index, this._testIndex);
-    const itemBefore = this._find(index - 1, this._testIndex);
+  delete(index) {
+    const itemToDelete = this._find(index, this._testIndex)
+    const itemBefore = this._find(index - 1, this._testIndex)
     if (!itemBefore) {
-      this.head = itemToDelete.next;
+      this.head = itemToDelete.next
     } else {
-      itemBefore.next = itemToDelete.next;
+      itemBefore.next = itemToDelete.next
     }
 
-    this.length--;
-    return itemToDelete.value;
+    this.length--
+    return itemToDelete.value
   }
 }
 
 class Node {
-  constructor (value) {
-    this.value = value;
-    this.next = null;
+  constructor(value) {
+    this.value = value
+    this.next = null
   }
 }
 

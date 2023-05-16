@@ -6,22 +6,22 @@
 
 function breadthFirstSearch(rootNode) {
   if (!rootNode) {
-    return;
+    return
   }
 
-  const queue = [];
-  queue.push(rootNode);
+  const queue = []
+  queue.push(rootNode)
 
   while (queue.length > 0) {
-    const currentNode = queue.shift();
-    console.log(`Visiting: ${currentNode}`);
+    const currentNode = queue.shift()
+    console.log(`Visiting: ${currentNode}`)
 
     if (currentNode.left) {
-      queue.push(currentNode.left);
+      queue.push(currentNode.left)
     }
 
     if (currentNode.right) {
-      queue.push(currentNode.right);
+      queue.push(currentNode.right)
     }
   }
 }

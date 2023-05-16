@@ -6,30 +6,30 @@
  * Most useful stable and is O n log n
  */
 
-function merge (left, right) {
-  const results = [];
+function merge(left, right) {
+  const results = []
   while (left.length && right.length) {
     if (left[0] <= right[0]) {
-      results.push(left.shift());
+      results.push(left.shift())
     } else {
-      results.push(right.shift());
+      results.push(right.shift())
     }
   }
-  return results.concat(left, right);
+  return results.concat(left, right)
 }
 
-function mergeSort (nums) {
+function mergeSort(nums) {
   if (nums.length < 2) {
-    return nums;
+    return nums
   } else {
-    const length = nums.length;
-    const middle = Math.floor(length / 2);
-    const left = nums.slice(0, middle);
-    const right = nums.slice(middle);
+    const length = nums.length
+    const middle = Math.floor(length / 2)
+    const left = nums.slice(0, middle)
+    const right = nums.slice(middle)
 
-    return merge(mergeSort(left), mergeSort(right));
+    return merge(mergeSort(left), mergeSort(right))
   }
 }
 
 // test cases
-console.log(mergeSort([10, 5, 3, 8, 2, 6, 4, 7, 9, 1]));
+console.log(mergeSort([10, 5, 3, 8, 2, 6, 4, 7, 9, 1]))

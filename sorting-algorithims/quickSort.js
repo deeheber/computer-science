@@ -7,25 +7,25 @@
  * Concat left, pivot, right and return
  */
 
-function quickSort (nums) {
+function quickSort(nums) {
   if (nums.length < 2) {
-    return nums;
+    return nums
   }
-  const pivot = nums.pop();
-  const less = [];
-  const greater = [];
+  const pivot = nums.pop()
+  const less = []
+  const greater = []
 
   for (let i = 0; i < nums.length; i++) {
-    const current = nums[i];
+    const current = nums[i]
     if (current <= pivot) {
-      less.push(current);
+      less.push(current)
     } else {
-      greater.push(current);
+      greater.push(current)
     }
   }
 
-  return quickSort(less).concat(pivot, quickSort(greater));
+  return quickSort(less).concat(pivot, quickSort(greater))
 }
 
 // Test case
-console.log(quickSort([10, 8, 2, 1, 6, 3, 9, 4, 7, 5]));
+console.log(quickSort([10, 8, 2, 1, 6, 3, 9, 4, 7, 5]))
